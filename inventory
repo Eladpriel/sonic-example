@@ -1,9 +1,15 @@
-[switches]
-spine-1 ansible_host=192.168.168.78
-spine-2 ansible_host=192.168.168.79
-leaf-3 ansible_host=192.168.168.70
-leaf-4 ansible_host=192.168.168.71
+[spine]
+spine-1 ansible_host=192.168.168.41
+spine-2 ansible_host=192.168.168.42
+[leaf]
+r1-a ansible_host=192.168.168.31
+r1-b ansible_host=192.168.168.32
+r2-a ansible_host=192.168.168.33
+r2_b ansible_host=192.168.168.34
 [server]
-server-2 ansible_host=192.168.168.72
-server-1 ansible_host=192.168.168.73
+server-2 ansible_host=192.168.168.52
+server-1 ansible_host=192.168.168.51
+[dc:children]
+spine
+leaf
 
