@@ -1,9 +1,9 @@
 sonic_interfaces:
-   - name: "{{ leaf_spine-a_inf1 }}"
-     description: "{{ leaf_spine-a_inf1 }} Spine-a"
+   - name: "{{ leaf_spine1_inf1 }}"
+     description: "{{ leaf_spine1_inf1 }} Spine-a"
      enabled: true
-   - name: "{{ leaf_spine-b_inf2 }}"
-     description: "{{ leaf_spine-b_inf2 }} Spine-b2"
+   - name: "{{ leaf_spine2_inf2 }}"
+     description: "{{ leaf_spine2_inf2 }} Spine-b"
      enabled: true
    - name: "{{ loopback_inf0 }}"
    - name: "{{ loopback_inf1 }}"        
@@ -17,10 +17,10 @@ sonic_l3_interfaces:
      ipv4:
        addresses:     
         - address: "{{ loopback1_ip }}"
-   - name: "{{ leaf_spine-a_inf1 }}"
+   - name: "{{ leaf_spine1_inf1 }}"
      ipv6:
        enabled: true      
-   - name: "{{ leaf_spine-b_inf2 }}"
+   - name: "{{ leaf_spine2_inf2 }}"
      ipv6:
        enabled: true
 
@@ -94,7 +94,7 @@ sonic_bgp_neighbors:
                 allowas_in:
                   value: 2            
       neighbors:
-        - neighbor: "{{ leaf_spine-a_inf1 }}"
+        - neighbor: "{{ leaf_spine1_inf1 }}"
           peer_group: SPINE
-        - neighbor: "{{ leaf_spine-b_inf2 }}"
+        - neighbor: "{{ leaf_spine2_inf2 }}"
           peer_group: SPINE

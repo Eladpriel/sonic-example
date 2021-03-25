@@ -1,17 +1,17 @@
 loopback_inf0: Loopback0
 
 sonic_interfaces:
-   - name: "{{ spine_r1-leaf-a_inf1 }}"
-     description: "{{ spine_r1-leaf-a_inf1 }} Leaf1"
+   - name: "{{ spine_r1l1_inf1 }}"
+     description: "{{ spine_r1l1_inf1 }} r1-leaf-a"
      enabled: true
-   - name: "{{ spine_r1-leaf-b_inf2 }}"
-     description: "{{ spine_r1-leaf-b_inf2 }} Leaf2"
+   - name: "{{ spine_r1l2_inf2 }}"
+     description: "{{ spine_r1l2_inf2 }} r1-leaf-b"
      enabled: true
-   - name: "{{ spine_r2-leaf-a_inf3 }}"
-     description: "{{ spine_r2-leaf-a_inf3 }} Leaf25"
+   - name: "{{ spine_r2l1_inf3 }}"
+     description: "{{ spine_r2l1_inf3 }} r2-leaf-a"
      enabled: true
-   - name: "{{ spine_r2-leaf-b_inf4 }}"
-     description: "{{ spine_r2-leaf-b_inf4 }} Leaf26"
+   - name: "{{ spine_r2l2_inf4 }}"
+     description: "{{ spine_r2l2_inf4 }} r2-leaf-b"
      enabled: true
    - name: "{{ loopback_inf0 }}"
 
@@ -20,16 +20,16 @@ sonic_l3_interfaces:
      ipv4:
       addresses:     
         - address: "{{ loopback0_ip }}"
-   - name: "{{ spine_r1-leaf-a_inf1 }}"
+   - name: "{{ spine_r1l1_inf1 }}"
      ipv6:
        enabled: true
-   - name: "{{ spine_r1-leaf-b_inf2 }}"
+   - name: "{{ spine_r1l2_inf2 }}"
      ipv6:
        enabled: true
-   - name: "{{ spine_r2-leaf-a_inf3 }}"
+   - name: "{{ spine_r2l1_inf3 }}"
      ipv6:
        enabled: true
-   - name: "{{ spine_r2-leaf-b_inf4 }}"
+   - name: "{{ spine_r2l2_inf4 }}"
      ipv6:
        enabled: true
 
@@ -74,11 +74,11 @@ sonic_bgp_neighbors:
                 safi: unicast
                 activate: true          
       neighbors:
-        - neighbor: "{{ spine_r1-leaf-a_inf1 }}"
+        - neighbor: "{{ spine_r1l1_inf1 }}"
           peer_group: LEAF
-        - neighbor: "{{ spine_r1-leaf-b_inf2 }}"
+        - neighbor: "{{ spine_r1l2_inf2 }}"
           peer_group: LEAF
-        - neighbor: "{{ spine_r2-leaf-a_inf3 }}"
+        - neighbor: "{{ spine_r2l1_inf3 }}"
           peer_group: LEAF
-        - neighbor: "{{ spine_r2-leaf-b_inf4 }}"
+        - neighbor: "{{ spine_r2l2_inf4 }}"
           peer_group: LEAF
